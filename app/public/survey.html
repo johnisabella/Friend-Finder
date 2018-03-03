@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Survey Page</title>
+
+  <!-- Latest compiled and minified CSS & JS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+  <div class="container">
+
+  <div class="jumbotron">
+    <h1 class="display-4">Friend Finder Survey</h1>
+    <p class="lead">Complete the questions below by indicating the degree to which you agree or disagree with each statement. When you have answered all of the questions, click the "Submit Survey Responses" button at the bottom of the page.</p>
+    <hr class="my-4">
+  </div>
+
+  <form>
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Your Name</label>
+      <input type="input" class="form-control" id="user-name" placeholder="First and Last Name">
+    </div>
+    <div class="form-group">
+      <label for="Question1">Question 1: I regulary engage in political discussions with my friends.</label>
+      <select class="form-control" id="Question-1">
+        <option>1 (Strongly Disagree)</option>
+        <option>2 (Somewhat Disagree)</option>
+        <option>3 (Neutral)</option>
+        <option>4 (Somewhat Agree)</option>
+        <option>5 (Strongly Agree)</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="Question2">Question 2: I prefer that my friends give me "tough love" as opposed to blind support.</label>
+      <select class="form-control" id="Question-2">
+        <option>1 (Strongly Disagree)</option>
+        <option>2 (Somewhat Disagree)</option>
+        <option>3 (Neutral)</option>
+        <option>4 (Somewhat Agree)</option>
+        <option>5 (Strongly Agree)</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="Question3">Question 3: I prefer a smaller, tight-knit group of friends versus a larger extended network of friends.</label>
+      <select class="form-control" id="Question-3">
+        <option>1 (Strongly Disagree)</option>
+        <option>2 (Somewhat Disagree)</option>
+        <option>3 (Neutral)</option>
+        <option>4 (Somewhat Agree)</option>
+        <option>5 (Strongly Agree)</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="Question4">Question 4: I like to spend time outside of work partying as opposed to relaxing. </label>
+      <select class="form-control" id="Question-4">
+        <option>1 (Strongly Disagree)</option>
+        <option>2 (Somewhat Disagree)</option>
+        <option>3 (Neutral)</option>
+        <option>4 (Somewhat Agree)</option>
+        <option>5 (Strongly Agree)</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="Question5">Question 5: I made most of my friends as a child/young adult.</label>
+      <select class="form-control" id="Question-5">
+        <option>1 (Strongly Disagree)</option>
+        <option>2 (Somewhat Disagree)</option>
+        <option>3 (Neutral)</option>
+        <option>4 (Somewhat Agree)</option>
+        <option>5 (Strongly Agree)</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="Question6">Question 6: Friends earn trust over time; they do not start out with 100% of my trust.</label>
+      <select class="form-control" id="Question-6">
+        <option>1 (Strongly Disagree)</option>
+        <option>2 (Somewhat Disagree)</option>
+        <option>3 (Neutral)</option>
+        <option>4 (Somewhat Agree)</option>
+        <option>5 (Strongly Agree)</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="Question7">Question 7: I expect my friends to remember and celebrate important dates with me (birthdays, anniversaries, etc.)</label>
+      <select class="form-control" id="Question-7">
+        <option>1 (Strongly Disagree)</option>
+        <option>2 (Somewhat Disagree)</option>
+        <option>3 (Neutral)</option>
+        <option>4 (Somewhat Agree)</option>
+        <option>5 (Strongly Agree)</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="Question8">Question 8: It is difficult for me to maintain friendships with those not in a similar financial situation.</label>
+      <select class="form-control" id="Question-8">
+        <option>1 (Strongly Disagree)</option>
+        <option>2 (Somewhat Disagree)</option>
+        <option>3 (Neutral)</option>
+        <option>4 (Somewhat Agree)</option>
+        <option>5 (Strongly Agree)</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="Question9">Question 9: My friends must be animal and nature lovers.</label>
+      <select class="form-control" id="Question-9">
+        <option>1 (Strongly Disagree)</option>
+        <option>2 (Somewhat Disagree)</option>
+        <option>3 (Neutral)</option>
+        <option>4 (Somewhat Agree)</option>
+        <option>5 (Strongly Agree)</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="Question10">Question 10: My friends must have a similar political ideology to mine.</label>
+      <select class="form-control" id="Question-10">
+        <option>1 (Strongly Disagree)</option>
+        <option>2 (Somewhat Disagree)</option>
+        <option>3 (Neutral)</option>
+        <option>4 (Somewhat Agree)</option>
+        <option>5 (Strongly Agree)</option>
+      </select>
+    </div>
+    <button type="submit" id="submit" class="btn btn-primary">Submit Survey Responses</button>
+  </form>
+
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <p><a href="/api/friends">API Friend Link</a></p>
+    </div>
+  </footer>
+
+
+</body>
+</html>
+
+
+<!-- BELOW CODE IS CRITICAL. IT HANDLES HOW FORM DATA IS SENT TO OUR SERVER -->
+<script type="text/javascript">
+
+    // In this code below we create the Front-end JavaScript which "POSTS" our form data to our express server.
+    // In essence, when the user hits submit, jQuery grabs all of the fields then sends a post request to our api
+    // Our api recognizes the route (/api/tables)... and then runs the associated code (found in api-routes.js).
+    // In this case the associated code "saves" the data to the table-data.js file or waitinglist-data.js file
+
+    $("#submit").on("click", function(event) {
+      event.preventDefault();
+      console.log("on click successful.")
+
+      // Here we grab the form elements
+      var newFriendSurvey = {
+        name: $("#user-name").val().trim(),
+        scores:[
+          parseInt($("#Question-1").val().charAt(0)),
+          parseInt($("#Question-2").val().charAt(0)),
+          parseInt($("#Question-3").val().charAt(0)),
+          parseInt($("#Question-4").val().charAt(0)),
+          parseInt($("#Question-5").val().charAt(0)),
+          parseInt($("#Question-6").val().charAt(0)),
+          parseInt($("#Question-7").val().charAt(0)),
+          parseInt($("#Question-8").val().charAt(0)),
+          parseInt($("#Question-9").val().charAt(0)),
+          parseInt($("#Question-10").val().charAt(0)),
+        ]
+      };
+
+      console.log(newFriendSurvey);
+
+      $.post("/api/friends", newFriendSurvey,
+        function(data) {
+
+          // If a table is available... tell user they are booked.
+          if (data) {
+            alert("Thank you, your survey responses have been recorded.");
+          }
+
+          // If a table is available... tell user they on the waiting list.
+          else {
+            alert("Sorry. There was an error submitting your survey responses. Please try again.");
+          }
+
+          // Clear the form when submitting
+            $("#user-name").val("");
+            $("#question-1").val("");
+            $("#question-2").val("");
+            $("#question-3").val("");
+            $("#question-4").val("");
+            $("#question-5").val("");
+            $("#question-6").val("");
+            $("#question-7").val("");
+            $("#question-8").val("");
+            $("#question-9").val("");
+            $("#question-10").val("");
+
+            runResults();
+        });
+
+  });
+
+  function runResults() {
+
+    // Here we get the location of the root page.
+    // We use this instead of explicitly saying the URL is localhost:3001 because the url will change when we deploy.
+    var currentURL = window.location.origin;
+
+    // The AJAX function uses the URL of our API to GET the data associated with it (initially set to localhost)
+    $.ajax({ url: currentURL + "/api/friends", method: "GET" })
+    .done(function(friendsData) {
+
+      // Here we are logging the URL so we have access to it for troubleshooting
+      console.log("------------------------------------");
+      console.log("URL: " + currentURL + "/api/friends");
+      console.log("------------------------------------");
+
+      // Here we then log the NYTData to console, where it will show up as an object.
+      console.log(friendsData);
+      console.log("------------------------------------");
+      //
+      // Loop through each survey response to create an object that contains number arrays for each friend.
+      //FOR THE LIFE OF ME, I CANNOT RETRIEVE EACH ARRAY OF SCORES (STRINGS) AND CONVERT THEM INTO ARRAYS OF NUMBERS. 
+      var scoreArrayStrings = [];
+      for (var i = 0; i < friendsData.length; i++) {
+        scoreArrayStrings.push(friendsData[i].scores);
+      };
+      // console.log("SASTRINGS = " + scoreArrayStrings);
+      // const map1 = scoreArrayStrings.map(x => x);
+      // console.log(map1);
+
+      var scoreArrayNumbers = [];
+      for (var i = 0; i < scoreArrayStrings.length; i++) {
+        scoreArrayNumbers.push(Number(scoreArrayStrings[i]));
+      };
+      console.log("SANUMBERS = " + scoreArrayNumbers);
+      //
+      // //Source of this code: https://stackoverflow.com/questions/11318680/split-array-into-chunks-of-n-length
+      // var groupSize = 10;
+      // var groups = scoreArrayNumbers.map(function(e,i){
+      // return i%groupSize===0 ? scoreArrayNumbers.slice(i,i+groupSize) : null;
+      // })
+      // .filter(function(e){ return e; });
+      // console.log(groups);
+
+      //
+
+    });
+  }
+
+</script>
